@@ -34,6 +34,9 @@ from django.db.models import Sum,Count, Avg, Min, Max
 
 ![image](https://github.com/user-attachments/assets/b43c22fe-6488-4af2-988c-2e79502eae73)
 
+3 задание (Запросы через связь. values() и values_list())
+
+
 Привязка другого склада(id_warehouse = 9) к ресторану (id_rest = 4)
 
 ![image](https://github.com/user-attachments/assets/8d10cfd6-23b7-4cc0-b6ba-38ccbed329f1)
