@@ -1,8 +1,8 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 
-from food_delivery.forms import OrderForm
-from food_delivery.models import Restaurant, Order, User
+from forms import OrderForm
+from models import Restaurant, Order, User
 
 
 class RestaurantsListViews(ListView):
