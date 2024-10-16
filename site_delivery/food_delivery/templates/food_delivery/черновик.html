@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Рестораны {% endblock %}
+
+{% block body %}
+    <h1>Рестораны</h1>
+    <div>
+        {% for rest in rests %}
+            <div>
+                <ul>{{rest.name}} {{rest.address}} </ul>
+            </div>
+            <div>
+                {% for dish in rest.menu.all %}
+                    Меню:
+                    <ol>
+                        {{dish.name}}
+                    </ol>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

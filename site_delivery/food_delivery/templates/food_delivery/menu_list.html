@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Меню {{rest.name}} {% endblock %}
+
+{% block body %}
+<div class="container nt-5 mb-5">
+    <div class="container nt-5 mt-5">
+        <h1 style="margin-bottom: 30px;">Меню ресторана "{{rest.name}}"</h1>
+        <div class="row">
+            {% for dish in rest.menu.all %}
+                <div class="col-md-4 nt-4" style="margin-bottom: 10px">
+                    <div class="card-img-container">
+                        {% if dish.preview %}
+                            <img src="{{dish.preview.url}}" class="rounded-3" width="356px" height="237px"/>
+                        {% endif %}
+                    </div>
+                    <div class="card-body " >
+                        <h5 class="card-title">{{dish.name}}        {{dish.price}} руб.</h5>
+                        <p class="card-text">{{dish.composition}}</p>
+                        <form action="{% url 'food_delivery:create_order' rest.pk %}">
+                            <button class="btn btn-primary" style="padding: 10px 30px; font-size: 0.9rem;"
+                            >Заказать</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

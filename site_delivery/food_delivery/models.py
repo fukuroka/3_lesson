@@ -1,8 +1,12 @@
+
 from django.db import models
 
 #функция создания пути для файла превью
 def menu_preview_directory_path(instance:"Menu",filename:str) -> str:
     return f'menu/previews/dish_{filename}'
+
+def rest_photo_directory_path(instance:"Restaurant",filename:str) -> str:
+    return f'restaurants/photo/{filename}'
 
 category_dishes = [
     ("Закуска", "Закуска"),
@@ -48,6 +52,8 @@ class Restaurant(models.Model):
     id_rest = models.AutoField(auto_created=True, primary_key=True, verbose_name='id ресторана')
     name = models.CharField(max_length=80,verbose_name='название ресторана')
     address = models.CharField(max_length=100,verbose_name='адрес ресторана')
+    photo_rest = models.ImageField(null = True, blank = True, upload_to=rest_photo_directory_path, verbose_name='фото ресторана')
+
     id_warehouse = models.OneToOneField(
         Warehouse,
         verbose_name='склад',
