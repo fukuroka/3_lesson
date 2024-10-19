@@ -46,12 +46,12 @@ class UpdateOrderView(UpdateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['restaurant'] = self.object.id_rest  # Передаем ресторан из объекта Order
+        kwargs['restaurant'] = self.object.id_rest
         return kwargs
 
 class OrderDeleteView(DeleteView):
     model = Order
-    template_name = 'food_delivery/order_confirm_delete.html'  # Добавьте шаблон для подтверждения удаления
+    template_name = 'food_delivery/order_confirm_delete.html'
     success_url = reverse_lazy('food_delivery:orders_list')
 
 class OrderListView(FilterView):
