@@ -1,5 +1,5 @@
 from django import forms
-from .models import Order, User, Menu
+from food_delivery.models import Order,Menu
 
 class OrderForm(forms.ModelForm):
     first_name = forms.CharField(max_length=50, label='Имя')

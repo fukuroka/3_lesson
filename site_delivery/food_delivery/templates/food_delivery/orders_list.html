@@ -2,6 +2,21 @@
 
 {% block title %} Список заказов {% endblock %}
 
+{% block sidebar %}
+<div class="col-md-3" style="margin-top: 10px; margin-left: 100px; margin-bottom: 10px">
+    <div class="card-body">
+        <form method="get">
+            {% csrf_token %}
+            {{ filter.form.as_p }}
+            <button class="btn btn-primary" type="submit">Найти</button>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
 
 {% block body %}
   <h2>Все заказы</h2>

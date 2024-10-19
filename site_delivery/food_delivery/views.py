@@ -1,19 +1,29 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 
-from forms import OrderForm
-from models import Restaurant, Order, User
+import food_delivery.models
+from food_delivery.forms import OrderForm
+from food_delivery.models import Restaurant, Order, User
+from django_filters.views import FilterView
+from food_delivery.filters import RestsFilter,MenuFilter, OrderFilter
 
-
-class RestaurantsListViews(ListView):
+class RestaurantsListViews(FilterView):
     template_name = 'food_delivery/restaurants_list.html'
     model = Restaurant
     context_object_name = 'rests'
+    filterset_class = RestsFilter
 
 class RestaurantMenu(DetailView):
     template_name = 'food_delivery/menu_list.html'
     model = Restaurant
     context_object_name = 'rest'
+
+    def get_context_data(self, **kwargs):
+        context_data = super(RestaurantMenu, self).get_context_data()
+        rest_pk = self.kwargs.get('pk', None)
+        f = MenuFilter(self.request.GET, queryset=food_delivery.models.Menu.objects.filter(id_rest=rest_pk))
+        context_data['filter'] = f
+        return context_data
 
 
 class OrderCreateView(CreateView):
@@ -44,7 +54,8 @@ class OrderDeleteView(DeleteView):
     template_name = 'food_delivery/order_confirm_delete.html'  # Добавьте шаблон для подтверждения удаления
     success_url = reverse_lazy('food_delivery:orders_list')
 
-class OrderListView(ListView):
+class OrderListView(FilterView):
     model = Order
     template_name = 'food_delivery/orders_list.html'
     context_object_name = 'orders'
+    filterset_class = OrderFilter

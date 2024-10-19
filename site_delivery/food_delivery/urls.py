@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RestaurantsListViews, RestaurantMenu, OrderCreateView, OrderListView, UpdateOrderView, \
+from food_delivery.views import RestaurantsListViews, RestaurantMenu, OrderCreateView, OrderListView, UpdateOrderView, \
     OrderDeleteView
 
 app_name = 'food_delivery'
