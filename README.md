@@ -1,3 +1,50 @@
+6 урок ДЗ
+
+Объединенный фильтр названия и адреса ресторанов. 
+До фильтра:
+![image](https://github.com/user-attachments/assets/950056ad-70f8-4db3-9df1-d6a3c161a8d1)
+После фильтра:
+![image](https://github.com/user-attachments/assets/bd5bd83f-4b8e-402d-b156-244434c65c46)
+![image](https://github.com/user-attachments/assets/d7ea9042-df33-47a7-b13e-719d6cbaffad)
+
+Фильтр диапазона цены и булевый фильтр вегетарианского блюда. До фильтра:
+![image](https://github.com/user-attachments/assets/1cdd4823-fb9e-4ceb-a170-7dc15d55511d)
+
+После фильтра:
+![image](https://github.com/user-attachments/assets/548fc5b2-b5d7-436a-9c05-dcffebe87a67)
+
+![image](https://github.com/user-attachments/assets/d622ed21-4fa6-45ef-b4fd-1495f6f13e8f)
+
+Фильтр названия ресторана в заказе и булевый фильтр большой ли заказ (>=3 считается большим). До фильтра:
+![image](https://github.com/user-attachments/assets/501d55e1-2e02-4b2a-903c-31466b3979d0)
+
+После фильтра;
+![image](https://github.com/user-attachments/assets/2540b6a3-3b64-4f71-8e37-916e1c041495)
+
+![image](https://github.com/user-attachments/assets/2f9fbc1f-c1f0-455d-ae06-8b0dcf88255c)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 from site_delivery.wsgi import *
 
 from food_delivery import models
