@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 
@@ -49,10 +50,21 @@ class UpdateOrderView(UpdateView):
         kwargs['restaurant'] = self.object.id_rest
         return kwargs
 
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
 class OrderDeleteView(DeleteView):
     model = Order
     template_name = 'food_delivery/order_confirm_delete.html'
     success_url = reverse_lazy('food_delivery:orders_list')
+
+    def get(self, request, *args, **kwargs):
+        # Получите объект заказа для отображения в шаблоне
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+        return render(request, self.template_name, context)
+
 
 class OrderListView(FilterView):
     model = Order
