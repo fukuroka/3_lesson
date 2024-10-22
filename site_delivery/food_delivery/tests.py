@@ -4,7 +4,7 @@ from django.test import TestCase
 from food_delivery import factories, models
 
 
-class RestaurantTestCase(TestCase):
+class FoodDeliveryTestCase(TestCase):
     def setUp(self):
         self.rest = factories.RestaurantFactory()
         self.dish1 = factories.MenuFactory(id_rest=self.rest)
