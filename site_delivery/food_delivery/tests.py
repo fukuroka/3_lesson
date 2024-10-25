@@ -6,12 +6,12 @@ from food_delivery import factories, models
 
 class FoodDeliveryTestCase(TestCase):
     def setUp(self):
-        self.rest = factories.RestaurantFactory()
+        self.rest = factories.RestaurantFactory()     #создаем ресторан
         self.dish1 = factories.MenuFactory(id_rest=self.rest)
         self.dish2 = factories.MenuFactory(id_rest=self.rest)
-        self.dish3 = factories.MenuFactory(id_rest=self.rest)
-        self.user = factories.UserFactory()
-        self.order = factories.OrderFactory(id_rest=self.rest, dishes=(self.dish1, self.dish2, self.dish3))
+        self.dish3 = factories.MenuFactory(id_rest=self.rest)    # добавляем 3 блюда в созданный ресторан
+        self.user = factories.UserFactory()    # создаем пользователя
+        self.order = factories.OrderFactory(id_rest=self.rest, dishes=(self.dish1, self.dish2, self.dish3))    #привязываем к созданному заказу ресторан и 3 блюда
 
 
     def test_get_rest_list(self):

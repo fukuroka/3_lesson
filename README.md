@@ -1,3 +1,12 @@
+![image](https://github.com/user-attachments/assets/1acf2b98-8d20-415d-b802-3c5b7e8056a5)
+
+
+
+
+
+
+
+
 6 урок ДЗ
 
 Объединенный фильтр названия и адреса ресторанов. 
