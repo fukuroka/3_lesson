@@ -41,7 +41,18 @@ INSTALLED_APPS = [
     'food_delivery.apps.FoodDeliveryConfig',
     'bootstrap5',
     'django_filters',
+    'rest_framework',
+    'drf_spectacular'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS':'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+    "DEFAULT_FILTER_BACKENDS":[
+        "django_filters.rest_framework.DjangoFilterBackend",
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

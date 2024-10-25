@@ -4,9 +4,57 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView, C
 
 import food_delivery.models
 from food_delivery.forms import OrderForm
-from food_delivery.models import Restaurant, Order, User
+from food_delivery.models import Restaurant, Order, User, Menu
 from django_filters.views import FilterView
 from food_delivery.filters import RestsFilter,MenuFilter, OrderFilter
+
+from food_delivery.serializers import UserSerializer, RestaurantSerializer,MenuSerializer, OrderSerializers
+from rest_framework import viewsets
+from rest_framework.filters import SearchFilter
+from django_filters.rest_framework import DjangoFilterBackend
+
+
+class RestaurantAPI(viewsets.ModelViewSet):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+    # Описание используемых фильтров
+    filter_backends = [
+        SearchFilter, # фильтрация производится по нескольким полям в одном input
+        DjangoFilterBackend # для каждого поля отдельный input
+    ]
+
+    search_fields = ['name','address'] # поля, по которым будет выполняться поиск для SearchFilter
+
+    # поля, по которым будет выполняться поиск для DjangoFilterBackend
+    filterset_fields = [
+        'name',
+        'address'
+    ]
+    ordering_fileds = ['name'] # сортировка по названию ресторана
+
+class MenuAPI(viewsets.ModelViewSet):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+    # Описание используемых фильтров
+    filter_backends = [
+        SearchFilter,
+        DjangoFilterBackend
+    ]
+    search_fields = ['name', 'composition','price']
+
+    filterset_fields = [
+        'name',
+        'composition',
+        'price'
+    ]
+    ordering_fileds = ['name'] # сортировка по названию блюда
+
+class OrderAPI(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializers
+
 
 class RestaurantsListViews(FilterView):
     template_name = 'food_delivery/restaurants_list.html'
