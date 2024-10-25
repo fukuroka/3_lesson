@@ -1,12 +1,12 @@
 Дз по DRF
 
-Restaurant Api List
+Restaurant Api List (сортировка по названию ресторана; фильтр по названию ресторана и адресу)
 
 ![image](https://github.com/user-attachments/assets/cf2f597a-4837-4677-b7dd-5d012268e534)
 
 ![image](https://github.com/user-attachments/assets/3b0a881f-a536-4187-919a-8c05e71c2a46)
 
-Menu Api List
+Menu Api List (сортировка по названию блюда; фильтр по названию блюда, составу и цене)
 
 ![image](https://github.com/user-attachments/assets/5ab5c55e-ccc6-4c32-bc09-377a16d698c1)
 
