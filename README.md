@@ -1,3 +1,30 @@
+Дз по DRF
+Restaurant Api List
+
+![image](https://github.com/user-attachments/assets/cf2f597a-4837-4677-b7dd-5d012268e534)
+
+![image](https://github.com/user-attachments/assets/3b0a881f-a536-4187-919a-8c05e71c2a46)
+
+Menu Api List
+
+![image](https://github.com/user-attachments/assets/5ab5c55e-ccc6-4c32-bc09-377a16d698c1)
+
+Order Api List
+
+![image](https://github.com/user-attachments/assets/1ba6150f-7195-4dc1-9dfa-78908ad5a022)
+
+![image](https://github.com/user-attachments/assets/25fc9f67-6044-4341-93c0-839b9dbb1903)
+
+Swagger
+
+![image](https://github.com/user-attachments/assets/8dc365db-dbc1-4713-b608-a607e386ccff)
+
+![image](https://github.com/user-attachments/assets/aa9fa08d-a49b-49e6-b6e5-398561a08d47)
+
+
+
+
+Выполненные тесты
 ![image](https://github.com/user-attachments/assets/1acf2b98-8d20-415d-b802-3c5b7e8056a5)
 
 
